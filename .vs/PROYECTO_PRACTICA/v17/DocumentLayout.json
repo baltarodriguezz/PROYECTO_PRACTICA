@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LAPTOP\\OneDrive\\Desktop\\UTN_PROG\\PROG2_C2\\PROYECTO_PRACTICA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E7BD56A4-2EAC-49F4-B0C2-C3E106E14FEF}|PROYECTO_PRACTICA\\PROYECTO_PRACTICA.csproj|c:\\users\\laptop\\onedrive\\desktop\\utn_prog\\prog2_c2\\proyecto_practica\\proyecto_practica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7BD56A4-2EAC-49F4-B0C2-C3E106E14FEF}|PROYECTO_PRACTICA\\PROYECTO_PRACTICA.csproj|solutionrelative:proyecto_practica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\OneDrive\\Desktop\\UTN_PROG\\PROG2_C2\\PROYECTO_PRACTICA\\PROYECTO_PRACTICA\\Program.cs",
+              "RelativeDocumentMoniker": "PROYECTO_PRACTICA\\Program.cs",
+              "ToolTip": "C:\\Users\\LAPTOP\\OneDrive\\Desktop\\UTN_PROG\\PROG2_C2\\PROYECTO_PRACTICA\\PROYECTO_PRACTICA\\Program.cs",
+              "RelativeToolTip": "PROYECTO_PRACTICA\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-30T23:56:42.854Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
