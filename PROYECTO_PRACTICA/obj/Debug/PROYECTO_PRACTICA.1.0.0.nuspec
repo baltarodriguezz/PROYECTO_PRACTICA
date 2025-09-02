@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PROYECTO_PRACTICA</id>
+    <version>1.0.0</version>
+    <authors>PROYECTO_PRACTICA</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="06e80d4dcc9047545e12b7616a5ac57e681017f0" />
+    <dependencies>
+      <group targetFramework="net9.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\LAPTOP\OneDrive\Desktop\UTN_PROG\PROG2_C2\PROYECTO_PRACTICA\PROYECTO_PRACTICA\bin\Debug\net9.0\PROYECTO_PRACTICA.runtimeconfig.json" target="lib\net9.0\PROYECTO_PRACTICA.runtimeconfig.json" />
+    <file src="C:\Users\LAPTOP\OneDrive\Desktop\UTN_PROG\PROG2_C2\PROYECTO_PRACTICA\PROYECTO_PRACTICA\bin\Debug\net9.0\PROYECTO_PRACTICA.dll" target="lib\net9.0\PROYECTO_PRACTICA.dll" />
+  </files>
+</package>
