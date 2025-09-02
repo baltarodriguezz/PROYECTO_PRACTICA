@@ -6,19 +6,8 @@ using PROYECTO_PRACTICA.Domain;
 string Cadena = PROYECTO_PRACTICA.Properties.Resources.cnn;
 ArticuloManager oAM = new ArticuloManager(Cadena);
 
-var lista = oAM.GetAllArticulos();
-foreach (var item in lista)
-{
-    Console.WriteLine(item);
-}
+FacturaManager oFM = new FacturaManager(Cadena);
 
+oFM.GetFacturaById(1);
 
-oAM.DeleteArticulo(5);
-var lista2 = oAM.GetAllArticulos();
-foreach (var item in lista2)
-{
-    Console.WriteLine(item);
-}
-oAM.Commit();
-
-
+Console.WriteLine(oFM.GetFacturaById(1).ToString());

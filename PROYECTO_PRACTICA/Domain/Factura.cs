@@ -44,6 +44,11 @@ namespace PROYECTO_PRACTICA.Domain
             Detalles.Remove(detalle);
         }
 
+        public override string ToString()
+        {
+            return $"Factura Nro: {Nro}, Fecha: {Fecha.ToShortDateString()}, Cliente: {Cliente}, Forma de Pago: {FormaPago.Nombre}, Total: {Total():C}";
+        }
+
 
     }
 }
