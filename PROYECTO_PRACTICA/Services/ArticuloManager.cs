@@ -12,9 +12,9 @@ namespace PROYECTO_PRACTICA.Services
     {
         private readonly UnitOfWork _unitOfWork;
 
-        public ArticuloManager(string connectionString)
+        public ArticuloManager(UnitOfWork unit)
         {
-            _unitOfWork = new UnitOfWork(connectionString);
+            _unitOfWork = unit;
         }
 
         public List<Articulo> GetAllArticulos()

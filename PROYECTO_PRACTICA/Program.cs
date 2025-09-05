@@ -2,12 +2,18 @@
 using System.ComponentModel;
 using PROYECTO_PRACTICA.Properties;
 using PROYECTO_PRACTICA.Domain;
+using PROYECTO_PRACTICA.Data.Utils; 
 
 string Cadena = PROYECTO_PRACTICA.Properties.Resources.cnn;
-ArticuloManager oAM = new ArticuloManager(Cadena);
+UnitOfWork unit = new UnitOfWork(Cadena);
+FacturaManager facturaManager = new FacturaManager(unit);
 
-FacturaManager oFM = new FacturaManager(Cadena);
 
-oFM.GetFacturaById(1);
 
-Console.WriteLine(oFM.GetFacturaById(1).ToString());
+var factura = facturaManager.GetFacturaById(1);
+Console.WriteLine(factura.ToString());
+foreach (var detail in factura.Detalles)
+{
+    Console.WriteLine($"\t{detail.ToString()}");
+}
+

@@ -30,7 +30,7 @@ namespace PROYECTO_PRACTICA.Data.Implementations
         public List<Factura> GetAll()
         {
             List<Factura> facturas = new List<Factura>();
-            DataTable dt = DataHelper.GetInstance().ExecuteSPQuery("SP_RECUPERAR_FACTURAS", connection, transaction);
+            DataTable dt = DataHelper.GetInstance().ExecuteSPQuery("SP_RECUPERAR_FACTURAS_DETALLES", connection, transaction);
 
             foreach(DataRow row in dt.Rows)
             {
@@ -41,8 +41,23 @@ namespace PROYECTO_PRACTICA.Data.Implementations
                     Cliente = row["cliente"].ToString(),
                     FormaPago = new FormaPago()
                     {
-                        Id = Convert.ToInt32(row["id_forma_pago"]),
+                        Id = Convert.ToInt32(row["id_forma"]),
                         Nombre = row["nombre_forma"].ToString()
+                    },
+                    Detalles = new List<DetalleFactura>()
+                    {
+                        new DetalleFactura()
+                        {
+                            idDetalle = Convert.ToInt32(row["id_detalle"]),
+                            idFactura = Convert.ToInt32(row["nro_factura"]),
+                            Cantidad = Convert.ToInt32(row["cantidad"]),
+                            Articulo = new Articulo()
+                            {
+                                Id = Convert.ToInt32(row["id_articulo"]),
+                                Nombre = row["nombre_articulo"].ToString(),
+                                Precio_unitario = Convert.ToDouble(row["precio_articulo"])
+                            }
+                        }
                     }
                 };
                 facturas.Add(factura);
@@ -56,7 +71,7 @@ namespace PROYECTO_PRACTICA.Data.Implementations
             {
                 new ParameterSQL() { Nombre = "@nro_factura", Valor = id }
             };
-            DataTable dt = DataHelper.GetInstance().ExecuteSPQueryParameter("SP_RECUPERAR_FACTURA_POR_NRO", connection, transaction, parametros);
+            DataTable dt = DataHelper.GetInstance().ExecuteSPQueryParameter("SP_RECUPERAR_FACTURA_DETALLE_POR_NRO", connection, transaction, parametros);
             Factura f = new Factura();
             foreach (DataRow row in dt.Rows)
             {
@@ -65,8 +80,23 @@ namespace PROYECTO_PRACTICA.Data.Implementations
                 f.Cliente = row["cliente"].ToString();
                 f.FormaPago = new FormaPago()
                 {
-                    Id = Convert.ToInt32(row["id_forma_pago"]),
+                    Id = Convert.ToInt32(row["id_forma"]),
                     Nombre = row["nombre_forma"].ToString()
+                };
+                f.Detalles = new List<DetalleFactura>()
+                {
+                    new DetalleFactura()
+                    {
+                            idDetalle = Convert.ToInt32(row["id_detalle"]),
+                            idFactura = Convert.ToInt32(row["nro_factura"]),
+                            Cantidad = Convert.ToInt32(row["cantidad"]),
+                            Articulo = new Articulo()
+                            {
+                                Id = Convert.ToInt32(row["id_articulo"]),
+                                Nombre = row["nombre_articulo"].ToString(),
+                                Precio_unitario = Convert.ToDouble(row["precio_articulo"])
+                            }
+                    }
                 };
             }
             return f;

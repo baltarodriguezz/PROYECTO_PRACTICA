@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PROYECTO_PRACTICA.Data.Utils
 {
@@ -53,20 +54,23 @@ namespace PROYECTO_PRACTICA.Data.Utils
             {
                 _transaction.Commit();
             }
-            catch
+            catch(Exception ex)
             {
                 _transaction.Rollback();
-                throw;
+                throw new Exception("Error al guardar cambios en la base de datos.", ex);
             }
         }
         public void Dispose()
         {
-            _transaction?.Dispose();
-            if (_connection.State == System.Data.ConnectionState.Open)
+            if (_transaction != null)
+            {
+                _transaction.Dispose();
+            }
+            if (_connection != null)
             {
                 _connection.Close();
+                _connection.Dispose();
             }
-            _connection.Dispose();
         }
 
 

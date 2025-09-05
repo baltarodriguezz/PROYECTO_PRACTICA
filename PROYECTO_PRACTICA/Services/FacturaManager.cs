@@ -1,4 +1,5 @@
-﻿using PROYECTO_PRACTICA.Data.Utils;
+﻿using PROYECTO_PRACTICA.Data.Interfaces;
+using PROYECTO_PRACTICA.Data.Utils;
 using PROYECTO_PRACTICA.Domain;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,11 @@ namespace PROYECTO_PRACTICA.Services
     {
         private readonly UnitOfWork _unitOfWork;
 
-        public FacturaManager(string connectionString)
+        public FacturaManager(UnitOfWork unit)
         {
-            _unitOfWork = new UnitOfWork(connectionString);
+            _unitOfWork = unit;
         }
-        public List<Factura> GetAllFacturas()
+        public List<Factura> ObtenerFacturas()
         {
             return _unitOfWork.FacturaRepository.GetAll();
         }
